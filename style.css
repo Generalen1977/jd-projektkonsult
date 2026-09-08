@@ -1,0 +1,1168 @@
+/* =========================================================
+   JD PROJEKTKONSULT AB
+   STYLE.CSS
+========================================================= */
+
+
+/* =========================================================
+   GRUNDINSTÄLLNINGAR
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080a0d;
+    color: #f5f5f5;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(1420px, 88%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(7, 9, 12, 0.96);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.nav {
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* LOGGA */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo strong {
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #a9aaad;
+
+    font-size: 1.18rem;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+
+/* MENY */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+
+.menu a {
+    position: relative;
+
+    color: #d2d3d5;
+    text-decoration: none;
+
+    font-size: 0.98rem;
+
+    transition: color 0.25s ease;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: #c79a62;
+
+    transition: width 0.25s ease;
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 760px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 6, 9, 0.95) 0%,
+            rgba(4, 6, 9, 0.88) 24%,
+            rgba(4, 6, 9, 0.66) 43%,
+            rgba(4, 6, 9, 0.20) 67%,
+            rgba(4, 6, 9, 0.04) 100%
+        ),
+        url("images/jd-hero-bg.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 7, 10, 0.05) 0%,
+            rgba(5, 7, 10, 0.02) 55%,
+            rgba(5, 7, 10, 0.28) 100%
+        );
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.hero-grid {
+    position: relative;
+    z-index: 2;
+
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    width: 58%;
+    max-width: 790px;
+
+    padding: 95px 0;
+}
+
+.hero-label {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO RUBRIK
+========================================================= */
+
+.hero h1 {
+    max-width: 790px;
+
+    color: #f4f4f4;
+
+    font-size: clamp(3.3rem, 4.65vw, 5.35rem);
+
+    line-height: 0.97;
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #c79a62;
+}
+
+
+/* =========================================================
+   HERO BESKRIVNING
+========================================================= */
+
+.hero-text {
+    max-width: 610px;
+
+    margin-top: 35px;
+
+    color: #d0d2d4;
+
+    font-size: 1.16rem;
+    line-height: 1.65;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+
+/* =========================================================
+   GAMLA VISITKORTSBILDEN DÖLJS
+========================================================= */
+
+.hero-image {
+    display: none;
+}
+
+
+/* =========================================================
+   KNAPPAR
+========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 54px;
+
+    padding: 14px 28px;
+
+    text-decoration: none;
+
+    font-size: 0.98rem;
+    font-weight: 700;
+
+    border: 1px solid transparent;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: #c79a62;
+    color: #090a0c;
+
+    border-color: #c79a62;
+}
+
+.btn-primary:hover {
+    background: #ddb27b;
+    border-color: #ddb27b;
+}
+
+.btn-secondary {
+    background: rgba(5, 7, 10, 0.48);
+
+    border-color: rgba(255, 255, 255, 0.36);
+
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    border-color: #c79a62;
+
+    color: #dcb27a;
+
+    background: rgba(5, 7, 10, 0.65);
+}
+
+.btn-gold {
+    background: #c79a62;
+    color: #090a0c;
+
+    border-color: #c79a62;
+}
+
+.btn-gold:hover {
+    background: #deb47d;
+    border-color: #deb47d;
+}
+
+
+/* =========================================================
+   ALLMÄNNA SEKTIONER
+========================================================= */
+
+.section {
+    padding: 125px 0;
+
+    background: #eeeeee;
+    color: #151719;
+}
+
+.section-dark {
+    background: #101317;
+    color: #f5f5f5;
+}
+
+.section-label {
+    color: #a87945;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+}
+
+.section-dark .section-label,
+.contact .section-label {
+    color: #c79a62;
+}
+
+.section h2 {
+    max-width: 930px;
+
+    margin-bottom: 32px;
+
+    font-size: clamp(2.5rem, 4.4vw, 4.4rem);
+
+    line-height: 1.06;
+    letter-spacing: -2.5px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   OM OSS
+========================================================= */
+
+.about {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1f1f0 0%,
+            #e9e9e7 100%
+        );
+
+    color: #16181a;
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1.02fr 0.98fr;
+
+    gap: 120px;
+
+    align-items: start;
+}
+
+.about-heading h2 {
+    max-width: 760px;
+
+    margin-bottom: 0;
+}
+
+.about-content {
+    padding-top: 48px;
+
+    color: #575b60;
+
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.about-content p + p {
+    margin-top: 22px;
+}
+
+.about-intro {
+    color: #1a1c1f;
+
+    font-size: 1.27rem;
+    font-weight: 600;
+
+    line-height: 1.55;
+}
+
+.about-values {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 85px;
+
+    border-top: 1px solid #c7c7c3;
+}
+
+.about-value {
+    min-height: 200px;
+
+    padding: 36px 38px 20px 0;
+
+    border-right: 1px solid #c7c7c3;
+}
+
+.about-value + .about-value {
+    padding-left: 38px;
+}
+
+.about-value:last-child {
+    border-right: none;
+}
+
+.about-value span {
+    display: block;
+
+    margin-bottom: 27px;
+
+    color: #a87945;
+
+    font-size: 0.74rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.about-value h3 {
+    margin-bottom: 11px;
+
+    color: #191b1e;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.about-value p {
+    max-width: 330px;
+
+    color: #62666a;
+
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TJÄNSTER
+========================================================= */
+
+.services {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 65px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.11);
+    border-left: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.service-card {
+    position: relative;
+
+    min-height: 255px;
+
+    padding: 38px 34px;
+
+    background: #111418;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.11);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.service-card:hover {
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191d22,
+            #121519
+        );
+
+    transform: translateY(-4px);
+}
+
+.service-card span {
+    display: block;
+
+    margin-bottom: 38px;
+
+    color: #c79a62;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+
+    color: #f5f5f5;
+
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    max-width: 330px;
+
+    color: #9fa3a8;
+
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ERFARENHET
+========================================================= */
+
+.experience {
+    position: relative;
+
+    background:
+        linear-gradient(
+            140deg,
+            #eeeeed,
+            #e4e4e2
+        );
+}
+
+.experience-grid {
+    display: grid;
+
+    grid-template-columns: 1.22fr 0.78fr;
+
+    gap: 115px;
+
+    align-items: center;
+}
+
+.experience h2 {
+    margin-bottom: 0;
+}
+
+.experience-text {
+    padding-top: 45px;
+
+    color: #55595e;
+
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.experience-text p + p {
+    margin-top: 28px;
+}
+
+
+/* =========================================================
+   KONTAKT
+========================================================= */
+
+.contact {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 55%,
+            rgba(190, 133, 67, 0.13),
+            transparent 36%
+        ),
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(25, 48, 74, 0.20),
+            transparent 40%
+        ),
+        linear-gradient(
+            130deg,
+            #080a0d,
+            #0c1118
+        );
+
+    color: #ffffff;
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    gap: 110px;
+
+    align-items: center;
+}
+
+.contact h2 {
+    margin-bottom: 0;
+}
+
+.contact-info {
+    color: #b4b7bb;
+
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.contact-info p {
+    margin-bottom: 28px;
+}
+
+.contact-info a:not(.btn) {
+    color: #ffffff;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.contact-info a:not(.btn):hover {
+    color: #c79a62;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    padding: 48px 0;
+
+    background: #050608;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer-logo {
+    color: #ffffff;
+
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.footer-logo span {
+    color: #9fa1a4;
+
+    font-weight: 400;
+}
+
+.footer p {
+    color: #65686c;
+
+    font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   MINDRE LAPTOP
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .hero-content {
+        width: 64%;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 5vw, 4.6rem);
+    }
+
+    .menu {
+        gap: 26px;
+    }
+
+    .about-grid {
+        gap: 70px;
+    }
+
+    .experience-grid,
+    .contact-grid {
+        gap: 70px;
+    }
+}
+
+
+/* =========================================================
+   SURFPLATTA
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .hero {
+        min-height: 720px;
+
+        background-position: 61% center;
+    }
+
+    .hero-grid {
+        min-height: 720px;
+    }
+
+    .hero-content {
+        width: 78%;
+
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
+
+    .hero h1 {
+        max-width: 850px;
+
+        font-size: clamp(3.2rem, 8vw, 4.8rem);
+    }
+
+
+    /* OM OSS */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .about-content {
+        padding-top: 0;
+
+        max-width: 800px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+
+    .about-value,
+    .about-value + .about-value {
+        min-height: auto;
+
+        padding: 30px 0;
+
+        border-right: none;
+        border-bottom: 1px solid #c7c7c3;
+    }
+
+    .about-value:last-child {
+        border-bottom: none;
+    }
+
+
+    /* TJÄNSTER */
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ERFARENHET + KONTAKT */
+
+    .experience-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .experience-text {
+        padding-top: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBIL
+========================================================= */
+
+@media (max-width: 720px) {
+
+    .container {
+        width: 88%;
+    }
+
+
+    /* HEADER */
+
+    .nav {
+        min-height: auto;
+
+        padding: 22px 0 18px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logo strong {
+        font-size: 1.25rem;
+    }
+
+    .logo span {
+        font-size: 0.95rem;
+        letter-spacing: 0.7px;
+    }
+
+
+    /* MENY */
+
+    .menu {
+        width: 100%;
+
+        display: flex;
+
+        gap: 20px;
+
+        overflow-x: auto;
+
+        padding-bottom: 4px;
+
+        scrollbar-width: none;
+    }
+
+    .menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu a {
+        flex: 0 0 auto;
+
+        white-space: nowrap;
+
+        font-size: 0.82rem;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 650px;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(4, 6, 9, 0.94) 0%,
+                rgba(4, 6, 9, 0.86) 48%,
+                rgba(4, 6, 9, 0.50) 76%,
+                rgba(4, 6, 9, 0.22) 100%
+            ),
+            url("images/jd-hero-bg.png");
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 69% center;
+    }
+
+    .hero-grid {
+        min-height: 650px;
+
+        align-items: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: none;
+
+        padding: 55px 0 70px;
+    }
+
+    .hero h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(1.95rem, 8.6vw, 2.35rem);
+
+        line-height: 1.04;
+        letter-spacing: -1.2px;
+
+        white-space: normal;
+    }
+
+    .hero-text {
+        max-width: 92%;
+
+        margin-top: 28px;
+
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        margin-top: 30px;
+
+        gap: 12px;
+    }
+
+
+    /* KNAPPAR */
+
+    .btn {
+        min-height: 52px;
+
+        padding: 13px 22px;
+    }
+
+
+    /* SEKTIONER */
+
+    .section {
+        padding: 78px 0;
+    }
+
+    .section-label {
+        margin-bottom: 16px;
+
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+    }
+
+    .section h2 {
+        font-size: clamp(2.15rem, 9vw, 3rem);
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    /* OM OSS */
+
+    .about-content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .about-intro {
+        font-size: 1.12rem;
+    }
+
+    .about-values {
+        margin-top: 50px;
+    }
+
+    .about-value,
+    .about-value + .about-value {
+        padding: 28px 0;
+    }
+
+
+    /* TJÄNSTER */
+
+    .services {
+        grid-template-columns: 1fr;
+
+        margin-top: 42px;
+    }
+
+    .service-card {
+        min-height: auto;
+
+        padding: 30px 26px;
+    }
+
+    .service-card span {
+        margin-bottom: 23px;
+    }
+
+    .service-card h3 {
+        font-size: 1.35rem;
+    }
+
+
+    /* ERFARENHET */
+
+    .experience-text {
+        font-size: 1rem;
+    }
+
+
+    /* KONTAKT */
+
+    .contact-info {
+        font-size: 1rem;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMÅ MOBILER
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .container {
+        width: 86%;
+    }
+
+    .hero {
+        min-height: 640px;
+
+        background-position: 71% center;
+    }
+
+    .hero-grid {
+        min-height: 640px;
+    }
+
+    .hero-content {
+        padding-top: 48px;
+        padding-bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size: 1.92rem;
+
+        line-height: 1.05;
+        letter-spacing: -0.9px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+
+        font-size: 0.96rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .section h2 {
+        font-size: clamp(2rem, 9.4vw, 2.7rem);
+    }
+}
+
+
+/* =========================================================
+   MYCKET SMÅ MOBILER
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .logo span {
+        font-size: 0.86rem;
+    }
+
+    .menu {
+        gap: 16px;
+    }
+
+    .menu a {
+        font-size: 0.78rem;
+    }
+
+    .hero h1 {
+        font-size: 1.72rem;
+
+        line-height: 1.06;
+        letter-spacing: -0.7px;
+    }
+}
