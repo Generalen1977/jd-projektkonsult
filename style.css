@@ -354,6 +354,179 @@ a {
 
 
 /* =========================================================
+   TJÄNSTERAD UNDER HERO
+========================================================= */
+
+.jd-service-strip {
+    background: #0b0e12;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.jd-service-strip-inner {
+    width: min(1420px, 88%);
+    margin: 0 auto;
+
+    min-height: 155px;
+
+    display: grid;
+
+    grid-template-columns:
+        140px
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        210px;
+}
+
+.jd-strip-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-right: 28px;
+
+    color: #c79a62;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 3.5px;
+
+    text-transform: uppercase;
+}
+
+.jd-strip-label i {
+    display: block;
+
+    width: 32px;
+    height: 2px;
+
+    margin-top: 13px;
+
+    background: #c79a62;
+}
+
+.jd-strip-service {
+    display: grid;
+
+    grid-template-columns: 44px 1fr;
+
+    gap: 12px;
+
+    align-content: center;
+
+    min-width: 0;
+
+    padding: 24px 30px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.10);
+
+    transition: background 0.25s ease;
+}
+
+.jd-strip-service:hover {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.jd-strip-icon {
+    padding-top: 1px;
+
+    color: #c79a62;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.jd-strip-service h3 {
+    margin-bottom: 7px;
+
+    color: #f4f4f4;
+
+    font-size: 1.04rem;
+    font-weight: 650;
+
+    line-height: 1.25;
+}
+
+.jd-strip-service p {
+    max-width: 300px;
+
+    color: #9fa3a8;
+
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+.jd-strip-more {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 30px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.jd-strip-more::before {
+    content: "";
+
+    display: block;
+
+    width: 32px;
+    height: 2px;
+
+    margin-bottom: 12px;
+
+    background: #c79a62;
+}
+
+.jd-strip-more > span {
+    color: #a8abad;
+
+    font-size: 0.62rem;
+    font-weight: 700;
+
+    letter-spacing: 2.6px;
+
+    line-height: 1.45;
+
+    text-transform: uppercase;
+}
+
+.jd-strip-more a {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 13px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 0.86rem;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.jd-strip-more a:hover {
+    color: #c79a62;
+}
+
+.jd-strip-more b {
+    color: #c79a62;
+
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+/* =========================================================
    ALLMÄNNA SEKTIONER
 ========================================================= */
 
@@ -751,6 +924,33 @@ a {
         width: 90%;
     }
 
+
+    .jd-service-strip-inner {
+        width: 90%;
+
+        grid-template-columns:
+            120px
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            180px;
+    }
+
+    .jd-strip-service {
+        grid-template-columns: 38px 1fr;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .jd-strip-more {
+        padding-left: 22px;
+    }
+
+    .jd-strip-service p {
+        font-size: 0.79rem;
+    }
+
     .hero-content {
         width: 64%;
     }
@@ -801,6 +1001,33 @@ a {
         max-width: 850px;
 
         font-size: clamp(3.2rem, 8vw, 4.8rem);
+    }
+
+
+
+    /* TJÄNSTERAD UNDER HERO */
+
+    .jd-service-strip-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .jd-strip-label {
+        grid-column: 1 / -1;
+
+        min-height: 88px;
+
+        padding-right: 0;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .jd-strip-service,
+    .jd-strip-more {
+        min-height: 130px;
+    }
+
+    .jd-strip-more {
+        padding: 24px 28px;
     }
 
 
@@ -924,6 +1151,78 @@ a {
         white-space: nowrap;
 
         font-size: 0.82rem;
+    }
+
+
+    /* TJÄNSTERAD UNDER HERO */
+
+    .jd-service-strip-inner {
+        width: 88%;
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .jd-strip-label {
+        grid-column: auto;
+
+        min-height: auto;
+
+        padding: 24px 0 20px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .jd-strip-label i {
+        margin-top: 9px;
+    }
+
+    .jd-strip-service {
+        grid-template-columns: 40px 1fr;
+
+        min-height: auto;
+
+        padding: 24px 0;
+
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .jd-strip-service:hover {
+        background: transparent;
+    }
+
+    .jd-strip-icon {
+        font-size: 1.55rem;
+    }
+
+    .jd-strip-service h3 {
+        margin-bottom: 5px;
+
+        font-size: 1rem;
+    }
+
+    .jd-strip-service p {
+        max-width: none;
+
+        font-size: 0.82rem;
+    }
+
+    .jd-strip-more {
+        min-height: auto;
+
+        padding: 22px 0 24px;
+
+        border-left: none;
+    }
+
+    .jd-strip-more::before {
+        margin-bottom: 9px;
+    }
+
+    .jd-strip-more a {
+        margin-top: 9px;
     }
 
 
@@ -1094,6 +1393,11 @@ a {
 @media (max-width: 430px) {
 
     .container {
+        width: 86%;
+    }
+
+
+    .jd-service-strip-inner {
         width: 86%;
     }
 
